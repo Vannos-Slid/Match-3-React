@@ -1,0 +1,25 @@
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 2px;
+    background-color: black;
+    padding: 10px;
+}
+
+/* .tile {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+} */
+
+*/ .tile.selected {
+    transform: scale(1.2);
+    border: 2px solid white;
+}
+
+.selected {
+    border: 3px solid white;
+}
