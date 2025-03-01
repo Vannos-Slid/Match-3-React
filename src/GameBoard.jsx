@@ -3,7 +3,6 @@ import { motion } from "framer-motion"
 import "./GameBoard.css";
 
 const width = 8;
-const colors = ["red", "blue", "green", "yellow", "purple"];
 
 import reptile from "./images/Characters/reptile.gif"
 import rain from "./images/Characters/rain.gif"
@@ -52,7 +51,12 @@ function GameBoard() {
     const swapTiles = (index1, index2) => {
         setBoard(prevBoard => {
             let newBoard = [...prevBoard];
-            [newBoard[index1], newBoard[index2]] = [newBoard[index2], newBoard[index1]];
+            [newBoard[index1], newBoard[index2]] =
+                // [
+                //     { ...newBoard[index2], x: index1 % width, y: Math.floor(index1 / width) },
+                //     { ...newBoard[index1], x: index2 % width, y: Math.floor(index2 / width) }
+                // ];
+                [newBoard[index2], newBoard[index1]];
             return newBoard;
         });
 
@@ -118,8 +122,8 @@ function GameBoard() {
                 alt="tile"
                 onClick={onClick}
                 className={`tile ${isSelected ? "selected" : ""}`}
-                // initial={{ opacity: 0, y: -50 }}
-                // animate={{ opacity: 1, y: y * 50 }}
+                // initial={{ opacity: 0 }}
+                // animate={{ opacity: 1, x: x * 50, y: y * 50 }}
                 transition={{
                     type: "spring",
                     stiffness: 100,

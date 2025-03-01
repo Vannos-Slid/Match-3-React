@@ -50,3 +50,20 @@ body {
 .read-the-docs {
   color: #888;
 }
+
+.sprite {
+  width: 50px;
+  height: 115px;
+  background: url("./images/Characters/11789.png") no-repeat;
+  animation: play-sprite 0.5s steps(4) infinite;
+}
+
+@keyframes play-sprite {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -200px 0;
+  }
+}
